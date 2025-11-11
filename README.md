@@ -1,100 +1,109 @@
 # Android-Studio-Manipuler-composants
 https://drive.google.com/drive/u/1/folders/1mPQ0fTYIMPDgFkb8z7TYix_1aV-EqhP7
-#📱 Application Android – Formulaire Utilisateur
 
-Application simple en Android permettant de saisir des informations utilisateur (nom, prénom, ville, genre) et d’afficher le résultat.
+# 📱 Application Android – Formulaire Utilisateur
 
-#✅ 1. Objectifs du projet
+Application Android permettant de saisir des informations utilisateur (**nom**, **prénom**, **ville**, **genre**) et d’afficher un résumé sous forme de **Toast**.
 
-Le but de cette application est de :
+---
 
-Créer une interface utilisateur Android simple et intuitive
+## ✅ 1. Objectifs du projet
 
-Manipuler les principaux composants graphiques :
-✅ EditText (saisie de texte)
-✅ Spinner (liste déroulante)
-✅ RadioGroup / RadioButton (sélection du genre)
-✅ Button
-✅ Toast (afficher un message à l’utilisateur)
+Ce projet a pour objectifs :
 
-Apprendre à récupérer les valeurs saisies et les traiter dans le code Java
+* Créer une **interface simple et intuitive** en Android.
+* Manipuler les principaux composants :
 
-Afficher un résumé des informations via un Toast
+  * `EditText` — saisie du nom et du prénom
+  * `Spinner` — choix de la ville
+  * `RadioGroup` & `RadioButton` — choix du genre
+  * `Button` — validation
+  * `Toast` — affichage du résultat
+* Apprendre à **récupérer et traiter les valeurs saisies**.
+* Comprendre la relation entre **XML (UI)** et **Java (logique)**.
+* Introduire les bases d’une `Activity` Android.
 
-Comprendre la structure d’une Activity Android (XML + Java)
+Ce projet constitue une introduction pratique au développement mobile.
 
-L'application constitue une introduction à la programmation Android, au design XML et à la communication entre interface et code Java.
+---
 
-#✅ 2. Architecture technique
-🔸 2.1. Technologies utilisées
+## ✅ 2. Architecture technique
 
-Android Studio : environnement de développement utilisé pour créer l’application.
+### 🔸 2.1. Technologies utilisées
 
-Java : langage principal utilisé pour la logique métier.
+* **Android Studio** – IDE principal
+* **Java** – Langage de programmation
+* **XML** – Conception de l’interface
+* **Android SDK** – Composants système
 
-XML : utilisé pour la conception de l’interface graphique (layouts).
+---
 
-Android SDK : fournit les composants nécessaires au fonctionnement de l’application.
+### 🔸 2.2. Structure du projet
 
-🔸 2.2. Structure du projet
-
-Le projet est organisé de la manière suivante :
-
+```
 app/
  ├── manifests/
- │     └── AndroidManifest.xml           → Déclare l’activité principale
+ │     └── AndroidManifest.xml
  ├── java/
  │     └── ma.agadir.app/
- │           └── MainActivity.java       → Logique de l’application
+ │           └── MainActivity.java
  └── res/
        ├── layout/
-       │     └── activity_main.xml       → Interface utilisateur
+       │     └── activity_main.xml
        ├── values/
-       │     ├── strings.xml             → Textes et libellés
-       │     └── colors.xml (optionnel)  → Palette de couleurs
+       │     ├── strings.xml
+       │     └── colors.xml
        └── mipmap/
-             └── ic_launcher.png         → Icône de l’application
+             └── ic_launcher.png
+```
 
-🔸 2.3. Description des composants UI
+---
 
-L’interface graphique de l’application utilise les éléments suivants :
+### 🔸 2.3. Description des composants UI
 
-TextView : affiche les titres des champs (Nom, Prénom, Ville, Genre).
+* **TextView** — labels : Nom, Prénom, Ville, Genre
+* **EditText** — champs de saisie pour nom et prénom
+* **Spinner** — liste déroulante des villes : *Agadir, Marrakech, Rabat, Casa*
+* **RadioGroup / RadioButton** — sélection du genre (F ou M)
+* **Button** — bouton de validation
+* **Toast** — affiche le résumé des informations saisies
 
-EditText : permet à l’utilisateur de saisir son nom et son prénom.
+---
 
-Spinner : fournit une liste déroulante contenant les villes : Agadir, Marrakech, Rabat, Casa.
+### 🔸 2.4. Fonctionnement du code (MainActivity)
 
-RadioGroup et RadioButton : permettent de sélectionner le genre (F ou M).
+1. Récupération des composants via `findViewById()`
+2. Création d’un **ArrayAdapter** pour remplir le Spinner
+3. Lecture des valeurs saisies :
 
-Button : déclenche la validation du formulaire.
+   * Nom & Prénom (EditText)
+   * Ville (Spinner)
+   * Genre (RadioGroup)
+4. Construction d’un message formaté
+5. Affichage du résultat dans un **Toast**
 
-Toast : affiche un message récapitulatif avec les informations saisies.
+**Exemple affiché :**
 
-🔸 2.4. Fonctionnement du code Java (MainActivity)
-
-Le fonctionnement interne de l'application se déroule en plusieurs étapes :
-
-Récupération des composants de l’interface via findViewById().
-
-Création d’un adapter pour remplir automatiquement le Spinner avec la liste des villes.
-
-Récupération des valeurs saisies par l’utilisateur :
-
-le nom et le prénom depuis les champs EditText,
-
-la ville sélectionnée depuis le Spinner,
-
-le genre choisi dans le RadioGroup.
-
-Construction d’un message formaté en combinant toutes les données.
-
-Affichage du résultat dans un Toast pour donner un retour immédiat à l’utilisateur.
-
-Exemple de résultat affiché :
-
+```
 hassaoui aya – Marrakech – Genre : F
-#✅ 3. Résultats obtenus
+```
+
+---
+
+## ✅ 3. Résultats obtenus
+
+L'application permet :
+
+* La **saisie du nom et du prénom**
+* La **sélection d’une ville**
+* Le **choix du genre**
+* L'affichage d’un message récapitulatif clair via un Toast
+
+L’interface est simple, moderne, fluide et entièrement fonctionnelle.
+
+---
+
+
 ![WhatsApp Image 2025-11-11 à 19 10 37_31779892](https://github.com/user-attachments/assets/18c359f8-1860-434f-b342-2ddd3e4145cb)
 ![WhatsApp Image 2025-11-11 à 19 10 38_48721027](https://github.com/user-attachments/assets/10ba893d-e4c2-4615-aee1-4642a68d473c)
 
